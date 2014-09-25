@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Header_BackgroundColor">#0087FF</color>
+    <color name="Header_TextColor">#FF7800</color>
+    <color name="General_LinkText">#0087FF</color>
+</resources>

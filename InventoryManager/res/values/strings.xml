@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shop Manager</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <!-- Header Message -->
+    <string name="Launcher_Title">Welcome To Simple Stock/Shop Manager</string>
+    <string name="Register_Title">Please Register Your Account</string>
+    <string name="Login_Title">Please Login To Access Your Account</string>
+    <!-- Progress message -->
+	<string name="Progress_waitRegister">"Please wait we are registring your account"</string>
+	<string name="Progress_waitLogin">"Please wait we are login you..."</string>
+	<!-- Launcher Page -->
+	<string name="Launcher_Add">Thank you for choosing our appplication.</string>
+	<!-- \nThis Application Developed and Maintain by SRM Mobile Solution\nWe are mobile solution company since 2012\nYou can contact us for Mobile or web related bussiness solution\n<b>Email:rakki.bsc2009@gmail.com</b> -->
+    <!-- registration String -->
+	<string name="Register_EnterUsername">Enter Your UserName</string>
+	<string name="Register_EnterPassword">Enter Your Passowrd</string>
+	<string name="Register_EnterEmail">Enter Your Email Address</string>
+	<string name="Register_EmailError">Please Enter Valid Email Address</string>
+	<string name="Register_UserError">UserName Should Not Be Empty</string>
+	<string name="Register_PasswordError">Passowrd Should Not Be Empty</string>
+	<string name="Register_Register">Register</string>
+	<!-- Login Strings -->
+	<string name="Login_Login">Login</string>
+	<string name="Login_ForgotPassword"><u>Need our help to login?</u></string>
+	<string name="Login_Create"><u>Create new account?</u></string>
+	<string name="General_Cancel">Cancel</string>
+	<string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string> 
+	  <string-array name="countries">
+        <item>India</item>
+        <item>Pakistan</item>
+        <item>Sri Lanka</item>
+        <item>China</item>
+        <item>Bangladesh</item>
+        <item>Nepal</item>
+        <item>Afghanistan</item>
+        <item>North Korea</item>
+        <item>South Korea</item>
+        <item>Japan</item>
+    </string-array>
+</resources>

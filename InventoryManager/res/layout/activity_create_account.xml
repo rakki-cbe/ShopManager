@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+   <RelativeLayout style="@style/FillWrap" android:background="@color/Header_BackgroundColor" android:minHeight="40dp" android:gravity="center_vertical" android:padding="10dp" >
+       <TextView style="@style/FillWrap" android:text="@string/Register_Title" android:textSize="@dimen/Header_Font" android:textColor="@color/Header_TextColor" android:gravity="center" android:textStyle="bold"/>
+   </RelativeLayout> 
+    <LinearLayout
+        style="@style/FillWrap"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <EditText
+            android:id="@+id/Register_username"
+            style="@style/Editext_FWCenterGravity"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/Register_EnterUsername" />
+
+        <EditText
+            android:id="@+id/Register_email"
+            style="@style/Editext_FWCenterGravity"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/Register_EnterEmail"
+            android:inputType="textWebEmailAddress" />
+
+        <EditText
+            android:id="@+id/Register_password"
+            style="@style/Editext_FWCenterGravity"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/Register_EnterPassword"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            style="@style/FillWrap"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <Button
+                android:id="@+id/Register_Register"
+                style="@style/Button"
+                android:layout_weight="1"
+                android:text="@string/Register_Register" android:onClick="clicker" />
+
+            <Button
+                android:id="@+id/Register_Cancel"
+                style="@style/Button"
+                android:layout_weight="1"
+                android:text="@string/General_Cancel" android:onClick="clicker"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
