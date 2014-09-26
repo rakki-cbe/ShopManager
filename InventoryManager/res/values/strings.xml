@@ -28,17 +28,23 @@
 	<string name="Login_Create"><u>Create new account?</u></string>
 	<string name="General_Cancel">Cancel</string>
 	<string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string> 
-	  <string-array name="countries">
-        <item>India</item>
-        <item>Pakistan</item>
-        <item>Sri Lanka</item>
-        <item>China</item>
-        <item>Bangladesh</item>
-        <item>Nepal</item>
-        <item>Afghanistan</item>
-        <item>North Korea</item>
-        <item>South Korea</item>
-        <item>Japan</item>
+    <string name="drawer_close">Close navigation drawer</string>
+    <!-- Menus Title -->
+    <string name="MenuT_Entry">Entrys</string>
+    <string name="MenuT_Reports">Reports</string>
+    <!-- String Arrays --> 
+	  <string-array name="Menuoption">
+        <item tag="title">@string/MenuT_Entry</item>
+        <item>Add item to stock</item>
+        <item >Purchase Entry</item>
+        <item>Salse Entry</item>
+        <item>Purchase Return</item>
+        <item>Salse Returns</item>
+        <item>Salary Paid</item>
+        <item>Other Expense</item>
+        <item tag="title">@string/MenuT_Reports</item>
+        <item>Stock </item>
     </string-array>
+     
+    
 </resources>

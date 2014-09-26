@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.SRMTechnology.inventorymanager.Addapters.MenuBarOptions;
 import com.SRMTechnology.inventorymanager.Fragments.MainScreen;
+import com.SRMTechnology.inventorymanager.helperclass.MenuString;
 
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -22,6 +24,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,22 +37,17 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class HomeScreen extends ActionBarActivity {
 	// Array of strings storing country names
-    String[] mCountries ;
+    MenuString[] MenuOption ;
     int mPosition = -1;	
 	String mTitle = "";
-    // Array of integers points to images stored in /res/drawable-ldpi/
-    
-    // Array of strings to initial counts
-    String[] mCount = new String[]{
-        "", "", "", "", "", 
-        "", "", "", "", "" };
+   
 	
 	private DrawerLayout mDrawerLayout;	
 	private ListView mDrawerList;	
 	private ActionBarDrawerToggle mDrawerToggle;	
 	private LinearLayout mDrawer ;	
 	private List<HashMap<String,String>> mList ;	
-	private SimpleAdapter mAdapter;	
+	private MenuBarOptions mAdapter;	
 	final private String COUNTRY = "country";	
 	
 	
@@ -59,7 +57,7 @@ public class HomeScreen extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		// Getting an array of country names
-				mCountries = getResources().getStringArray(R.array.countries);
+				getMenuOption();
 				
 				// Title of the activity
 				mTitle = (String)getTitle();
@@ -70,25 +68,8 @@ public class HomeScreen extends ActionBarActivity {
 				// Getting a reference to the sidebar drawer ( Title + ListView )
 				mDrawer = ( LinearLayout) findViewById(R.id.drawer);
 				
-				// Each row in the list stores country name, count and flag
-		        mList = new ArrayList<HashMap<String,String>>();
-
-		        
-		        for(int i=0;i<10;i++){
-		            HashMap<String, String> hm = new HashMap<String,String>();
-		            hm.put(COUNTRY, mCountries[i]);
-		            mList.add(hm);
-		        }
-
-		        // Keys used in Hashmap
-		        String[] from = { COUNTRY };
-
-		        // Ids of views in listview_layout
-		        int[] to = {  R.id.country };
-
-		        // Instantiating an adapter to store each items
-		        // R.layout.drawer_layout defines the layout of each item
-		        mAdapter = new SimpleAdapter(this, mList, R.layout.drawer_layout, from, to);
+				
+		        mAdapter = new MenuBarOptions(this, MenuOption); 
 		        
 		        // Getting reference to DrawerLayout
 		        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);        
@@ -118,14 +99,9 @@ public class HomeScreen extends ActionBarActivity {
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 							long arg3) {
-						
+						showFragment(position);
 						 
-						if(position < 5) { // Show fragment for countries : 0 to 4				
-							showFragment(position);
-						}else{ // Show message box for countries : 5 to 9				
-							Toast.makeText(getApplicationContext(), mCountries[position], Toast.LENGTH_LONG).show();
-						}
-						
+					
 						// Closing the drawer
 						mDrawerLayout.closeDrawer(mDrawer);		
 					}
@@ -139,6 +115,25 @@ public class HomeScreen extends ActionBarActivity {
 
 		        // Setting the adapter to the listView
 		        mDrawerList.setAdapter(mAdapter);  
+	}
+	private void getMenuOption() {
+		// TODO Auto-generated method stub
+	String[] tempVal=getResources().getStringArray(R.array.Menuoption);
+	MenuOption =new MenuString[tempVal.length];
+	for (int i=0;i<tempVal.length;i++)
+	{
+		MenuOption[i]=new MenuString();
+		MenuOption[i].setDisplayName(tempVal[i]);
+		MenuOption[i].setName(tempVal[i].replace(" ", "_"));
+		if(tempVal[i].equals(getString(R.string.MenuT_Entry)) || tempVal[i].equals(getString(R.string.MenuT_Reports)))
+		{
+			MenuOption[i].setCharctor(1);
+		}
+		else
+		{
+			MenuOption[i].setCharctor(2);
+		}
+	}
 	}
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
@@ -167,7 +162,7 @@ public class HomeScreen extends ActionBarActivity {
 	public void showFragment(int position){
 		
 		//Currently selected country
-        mTitle = mCountries[position];	
+        mTitle = MenuOption[position].getDisplayName();	
 
         // Creating a fragment object
         MainScreen cFragment = new MainScreen();
@@ -194,15 +189,9 @@ public class HomeScreen extends ActionBarActivity {
         ft.commit();
 	}
 	public void highlightSelectedCountry(){
-		int selectedItem = mDrawerList.getCheckedItemPosition();
-    	
-    	if(selectedItem > 4)
-    		mDrawerList.setItemChecked(mPosition, true);
-    	else
-    		mPosition = selectedItem;
-    	
-    	if(mPosition!=-1)
-    		getSupportActionBar().setTitle(mCountries[mPosition]);
+		
+    	    	if(mPosition!=-1)
+    		getSupportActionBar().setTitle( MenuOption[mPosition].getDisplayName());
 	}	
 
 }
