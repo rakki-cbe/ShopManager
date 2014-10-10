@@ -32,6 +32,14 @@
     <!-- Menus Title -->
     <string name="MenuT_Entry">Entrys</string>
     <string name="MenuT_Reports">Reports</string>
+    <!-- Add item general info -->
+    <string name="AIGI_ItemGCode">Item Group Code</string>
+    <string name="AIGI_ItemCode">Item Code</string>
+    <string name="AIGI_Name">Product Name</string>
+    <string name="AIGI_Category">Category</string>
+    <string name="AIGI_Location">Location Of Product In Shop</string>
+    <string name="AIGI_SinglePrice">Unit Price We Decided</string>
+    <string name="AIGI_ExpireDate">Expired Date</string>
     <!-- String Arrays --> 
 	  <string-array name="Menuoption">
         <item tag="title">@string/MenuT_Entry</item>

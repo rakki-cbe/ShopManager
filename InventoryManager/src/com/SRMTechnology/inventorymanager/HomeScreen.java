@@ -15,9 +15,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.SRMTechnology.inventorymanager.Addapters.MenuBarOptions;
+import com.SRMTechnology.inventorymanager.Fragments.AddItem;
 import com.SRMTechnology.inventorymanager.Fragments.MainScreen;
 import com.SRMTechnology.inventorymanager.helperclass.MenuString;
 
+import android.R.anim;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentManager;
@@ -160,30 +162,37 @@ public class HomeScreen extends ActionBarActivity {
 	
 	
 	public void showFragment(int position){
-		
-		//Currently selected country
-        mTitle = MenuOption[position].getDisplayName();	
-
-        // Creating a fragment object
-        MainScreen cFragment = new MainScreen();
-
-        // Creating a Bundle object
+		// Creating a Bundle object
         Bundle data = new Bundle();
-
         // Setting the index of the currently selected item of mDrawerList
-        data.putInt("position", position);
-
-        // Setting the position to the fragment
-        cFragment.setArguments(data);
-
-        // Getting reference to the FragmentManager
+        data.putInt("position", position);// Getting reference to the FragmentManager
         FragmentManager fragmentManager  = getSupportFragmentManager();
 
         // Creating a fragment transaction
         FragmentTransaction ft = fragmentManager.beginTransaction();
 
+        mTitle = MenuOption[position].getDisplayName();	
+        if(position==1 || position==2)
+        {
+        	AddItem cFragment = new AddItem();
+            // Setting the position to the fragment
+            cFragment.setArguments(data);
+            // Adding a fragment to the fragment transaction
+            ft.replace(R.id.content_frame, cFragment);
+        }
+        else{
+        // Creating a fragment object
+        MainScreen cFragment = new MainScreen();
+        // Setting the position to the fragment
+        cFragment.setArguments(data);
+
+        
         // Adding a fragment to the fragment transaction
         ft.replace(R.id.content_frame, cFragment);
+        }
+        
+
+
 
         // Committing the transaction
         ft.commit();

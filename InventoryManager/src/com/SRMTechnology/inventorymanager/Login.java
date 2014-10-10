@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.SRMTechnology.inventorymanager.Common.Function;
 import com.SRMTechnology.inventorymanager.dialogs.InformationDialog;
 import com.SRMTechnology.inventorymanager.dialogs.ProgressDialogBox;
 import com.parse.LogInCallback;
@@ -112,8 +114,13 @@ InformationDialog ID;
 						}
 						else
 						{
-							PD.CancelDialog();
-							ID.showInformation("Success", "Logged In");
+						
+							Function.showToast("Logged In Successfully", Toast.LENGTH_LONG, Login.this);
+							if(ParseUser.getCurrentUser()!=null)
+							{
+								Intent in = new Intent(Login.this,HomeScreen.class);
+								startActivity(in);
+							}
 						}
 					}
 				});

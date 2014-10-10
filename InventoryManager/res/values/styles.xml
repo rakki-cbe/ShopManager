@@ -40,6 +40,23 @@
     <item name="android:layout_marginRight">30dp</item>
     <item name="android:gravity">center</item>
     <item name="android:textSize">@dimen/Normal_Font</item>
+    <item name="android:background">@drawable/editext_normal_selector</item>
+</style>
+<style name="Editext_FWLeftGravity" parent="@style/FillWrap">
+    <item name="android:layout_marginLeft">30dp</item>
+    <item name="android:layout_marginRight">30dp</item>
+    <item name="android:gravity">left</item>
+    <item name="android:layout_gravity">left</item>
+    <item name="android:textSize">@dimen/Normal_Font</item>
+    <item name="android:background">@drawable/editext_normal_selector</item>
+</style>
+<style name="Editext_FWLeftGravityRequired" parent="@style/FillWrap">
+    <item name="android:layout_marginLeft">30dp</item>
+    <item name="android:layout_marginRight">30dp</item>
+    <item name="android:gravity">left</item>
+    <item name="android:layout_gravity">left</item>
+    <item name="android:background">@drawable/editext_required_selector</item>
+    <item name="android:textSize">@dimen/Normal_Font</item>
 </style>
 <style name="LinkedTextView" parent="@style/FillWrap">
     <item name="android:textSize">@dimen/Normal_Font</item>
@@ -51,5 +68,10 @@
    <item name="android:textSize">@dimen/Normal_Font</item>
    <item name="android:onClick">clicker</item>
    <item name="android:clickable">true</item> 
+</style>
+<style name="TextViewLable" parent="@style/FillWrap">
+    <item name="android:layout_marginLeft">30dp</item>
+    <item name="android:layout_marginRight">30dp</item>
+   <item name="android:textSize">@dimen/Normal_Font</item>
 </style>
 </resources>

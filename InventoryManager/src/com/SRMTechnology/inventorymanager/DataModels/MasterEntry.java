@@ -6,111 +6,114 @@
  */
 package com.SRMTechnology.inventorymanager.DataModels;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 
 public class MasterEntry {
 	public static String TableName="MasterTable";
-	Date Date,ExpireDate;
+	Date ValDate,ExpireDate;
 	String ItemGroupCode,ItemCode,NameOfProduct,LocationOfProduct,SingleUnitPrice,Quantity,PurchasedPricePerUnit,UnitMetrix,QualityGrade,Category,InvoiceNo,PurchasedCompany;
 	long PrimaryId;
-	public static String FieldDate="Date",FieldExpireDate="ExpireDate",FieldItemGroupCode="ItemGroupCode",FieldItemCode="ItemCode",FieldPrimaryId="PrimaryId",FieldNameOfProduct="NameOfProduct",FieldLocationOfProduct="LocationOfProduct",FieldSingleUnitPrice="SingleUnitPrice",FieldUnitMetrics="UnitMetrix",FieldQuantity="Quantity",FieldPurchasedPricePerUnit="PurchasedPricePerUnit",FieldQualityGrade="QualityGrade",FieldCategory="Category",FieldInvoiceNo="InvoiceNo",FieldPurchasedCompany="PurchasedCompany";
-	private String getUnitMetrix() {
+	public static String FieldValDate="ValDate",FieldExpireDate="ExpireDate",FieldItemGroupCode="ItemGroupCode",FieldItemCode="ItemCode",FieldPrimaryId="PrimaryId",FieldNameOfProduct="NameOfProduct",FieldLocationOfProduct="LocationOfProduct",FieldSingleUnitPrice="SingleUnitPrice",FieldUnitMetrics="UnitMetrix",FieldQuantity="Quantity",FieldPurchasedPricePerUnit="PurchasedPricePerUnit",FieldQualityGrade="QualityGrade",FieldCategory="Category",FieldInvoiceNo="InvoiceNo",FieldPurchasedCompany="PurchasedCompany";
+	public String getUnitMetrix() {
 		return UnitMetrix;
 	}
-	private void setUnitMetrix(String unitMetrix) {
+	public void setUnitMetrix(String unitMetrix) {
 		UnitMetrix = unitMetrix;
 	}
-	private Date getDate() {
-		return Date;
+	public Date getDate() {
+		return ValDate;
 	}
-	private void setDate(Date date) {
-		this.Date = date;
+	public void setDate(Date date) {
+		this.ValDate = date;
 	}
-	private Date getExpireDate() {
+	public Date getExpireDate() {
 		return ExpireDate;
 	}
-	private void setExpireDate(Date expireDate) {
+	public void setExpireDate(Date expireDate) {
 		ExpireDate = expireDate;
 	}
-	private String getItemGroupCode() {
+	public String getItemGroupCode() {
 		return ItemGroupCode;
 	}
-	private void setItemGroupCode(String itemGroupCode) {
+	public void setItemGroupCode(String itemGroupCode) {
 		ItemGroupCode = itemGroupCode;
 	}
-	private String getItemCode() {
+	public String getItemCode() {
 		return ItemCode;
 	}
-	private void setItemCode(String itemCode) {
+	public void setItemCode(String itemCode) {
 		ItemCode = itemCode;
 	}
-	private long getPrimaryId() {
+	public long getPrimaryId() {
 		return PrimaryId;
 	}
-	private void setPrimaryId(long primaryId) {
+	public void setPrimaryId(long primaryId) {
 		PrimaryId = primaryId;
 	}
-	private String getNameOfProduct() {
+	public String getNameOfProduct() {
 		return NameOfProduct;
 	}
-	private void setNameOfProduct(String nameOfProduct) {
+	public void setNameOfProduct(String nameOfProduct) {
 		NameOfProduct = nameOfProduct;
 	}
-	private String getLocationOfProduct() {
+	public String getLocationOfProduct() {
 		return LocationOfProduct;
 	}
-	private void setLocationOfProduct(String locationOfProduct) {
+	public void setLocationOfProduct(String locationOfProduct) {
 		LocationOfProduct = locationOfProduct;
 	}
-	private String getSingleUnitPrice() {
+	public String getSingleUnitPrice() {
 		return SingleUnitPrice;
 	}
-	private void setSingleUnitPrice(String singleUnitPrice) {
+	public void setSingleUnitPrice(String singleUnitPrice) {
 		SingleUnitPrice = singleUnitPrice;
 	}
-	private String getQuantity() {
+	public String getQuantity() {
 		return Quantity;
 	}
-	private void setQuantity(String quantity) {
+	public void setQuantity(String quantity) {
 		Quantity = quantity;
 	}
-	private String getPurchasedPricePerUnit() {
+	public String getPurchasedPricePerUnit() {
 		return PurchasedPricePerUnit;
 	}
-	private void setPurchasedPricePerUnit(String purchasedPricePerUnit) {
+	public void setPurchasedPricePerUnit(String purchasedPricePerUnit) {
 		PurchasedPricePerUnit = purchasedPricePerUnit;
 	}
-	private String getQualityGrade() {
+	public String getQualityGrade() {
 		return QualityGrade;
 	}
-	private void setQualityGrade(String qualityGrade) {
+	public void setQualityGrade(String qualityGrade) {
 		QualityGrade = qualityGrade;
 	}
-	private String getCategory() {
+	public String getCategory() {
 		return Category;
 	}
-	private void setCategory(String category) {
+	public void setCategory(String category) {
 		Category = category;
 	}
-	private String getInvoiceNo() {
+	public String getInvoiceNo() {
 		return InvoiceNo;
 	}
-	private void setInvoiceNo(String invoiceNo) {
+	public void setInvoiceNo(String invoiceNo) {
 		InvoiceNo = invoiceNo;
 	}
-	private String getPurchasedCompany() {
+	public String getPurchasedCompany() {
 		return PurchasedCompany;
 	}
-	private void setPurchasedCompany(String purchasedCompany) {
+	public void setPurchasedCompany(String purchasedCompany) {
 		PurchasedCompany = purchasedCompany;
 	}
 
 	public static String  CreateTable()
 	{
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TableName + "("
-				+ FieldPrimaryId +" INTEGER PRIMARY KEY," +FieldDate+" DATE,"	+FieldExpireDate+" DATE,"	+FieldItemGroupCode+" TEXT,"	+FieldItemCode+" TEXT,"	+FieldPrimaryId+" TEXT,"	+FieldNameOfProduct+" TEXT,"	+FieldLocationOfProduct+" TEXT,"	+FieldSingleUnitPrice+" TEXT,"	+FieldQuantity+" TEXT,"	+FieldPurchasedPricePerUnit+" TEXT"+FieldUnitMetrics+" TEXT,"+FieldQualityGrade+" TEXT,"	+FieldCategory+" TEXT,"	+FieldInvoiceNo+" TEXT,"	+FieldPurchasedCompany+" TEXT,+" + ")";
+				+ FieldPrimaryId +" INTEGER PRIMARY KEY," +FieldValDate+" DATE,"	+FieldExpireDate+" DATE,"	+FieldItemGroupCode+" TEXT,"	+FieldItemCode+" TEXT,"	+FieldPrimaryId+" TEXT,"	+FieldNameOfProduct+" TEXT,"	+FieldLocationOfProduct+" TEXT,"	+FieldSingleUnitPrice+" TEXT,"	+FieldQuantity+" TEXT,"	+FieldPurchasedPricePerUnit+" TEXT"+FieldUnitMetrics+" TEXT,"+FieldQualityGrade+" TEXT,"	+FieldCategory+" TEXT,"	+FieldInvoiceNo+" TEXT,"	+FieldPurchasedCompany+" TEXT,+" + ")";
 		return CREATE_CONTACTS_TABLE;
 	}
 	public static String DropTable()
@@ -120,7 +123,7 @@ public class MasterEntry {
 	public ContentValues InsertRecord() {
 
 		ContentValues values = new ContentValues();
-		values.put(FieldDate, getDate()+"");
+		values.put(FieldValDate, getDate()+"");
 		values.put(FieldExpireDate, getExpireDate()+"");
 		values.put(FieldItemGroupCode, getItemGroupCode());
 		values.put(FieldItemCode, getItemCode());
@@ -137,5 +140,35 @@ public class MasterEntry {
 		return values;
 
 	}
+	@SuppressWarnings("deprecation")
+	public void SetValuesFromCursor(Cursor c)
+	{
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
+	    Date convertedDate = new Date();
+        try {
+			convertedDate = dateFormat.parse(c.getString(c.getColumnIndex(FieldValDate)));
+			setDate(convertedDate);
+			convertedDate = dateFormat.parse(c.getString(c.getColumnIndex(FieldExpireDate)));
+			setExpireDate(convertedDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		setItemGroupCode(c.getString(c.getColumnIndex(FieldItemGroupCode)));
+		setItemCode(c.getString(c.getColumnIndex(FieldItemCode)));
+		setPrimaryId(c.getLong(c.getColumnIndex(FieldPrimaryId)));
+		setNameOfProduct(c.getString(c.getColumnIndex(FieldNameOfProduct)));
+		setLocationOfProduct(c.getString(c.getColumnIndex(FieldLocationOfProduct)));
+		setSingleUnitPrice(c.getString(c.getColumnIndex(FieldSingleUnitPrice)));
+		setUnitMetrix(c.getString(c.getColumnIndex(FieldUnitMetrics)));
+		setQuantity(c.getString(c.getColumnIndex(FieldQuantity)));
+		setPurchasedPricePerUnit(c.getString(c.getColumnIndex(FieldPurchasedPricePerUnit)));
+		setQualityGrade(c.getString(c.getColumnIndex(FieldQualityGrade)));
+		setCategory(c.getString(c.getColumnIndex(FieldCategory)));
+		setInvoiceNo(c.getString(c.getColumnIndex(FieldInvoiceNo)));
+		setPurchasedCompany(c.getString(c.getColumnIndex(FieldPurchasedCompany)));
+	}
+	
 
 }

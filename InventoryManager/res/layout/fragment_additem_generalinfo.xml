@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/LayGCode"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_ItemGCode"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_ItemGCode" />
+
+        <EditText
+            android:id="@+id/AIGI_ItemGCode"
+            style="@style/Editext_FWLeftGravityRequired"
+            android:hint="@string/AIGI_ItemGCode"
+            android:maxLength="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayICode"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_ItemCode"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_ItemCode" />
+
+        <EditText
+            android:id="@+id/AIGI_ItemCode"
+            style="@style/Editext_FWLeftGravity"
+            android:hint="@string/AIGI_ItemCode"
+            android:maxLength="5" />
+    </LinearLayout>
+        <LinearLayout
+        android:id="@+id/LayName"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_Name"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_Name" />
+
+        <EditText
+            android:id="@+id/AIGI_Name"
+            style="@style/Editext_FWLeftGravity"
+            android:hint="@string/AIGI_Name"
+            android:maxLength="5" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LayCategory"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_Category"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_Category" />
+
+        <EditText
+            android:id="@+id/AIGI_Category"
+            style="@style/Editext_FWLeftGravity"
+            android:hint="@string/AIGI_Category"
+            android:maxLength="5" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LayLocation"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_Location"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_Location" />
+
+        <EditText
+            android:id="@+id/AIGI_Location"
+            style="@style/Editext_FWLeftGravity"
+            android:hint="@string/AIGI_Location"
+            android:maxLength="5" />
+    </LinearLayout>
+ <LinearLayout
+        android:id="@+id/LaySinglePrice"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_SinglePrice"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_SinglePrice" />
+
+        <EditText
+            android:id="@+id/AIGI_SinglePrice"
+            style="@style/Editext_FWLeftGravity"
+            android:hint="@string/AIGI_SinglePrice"
+            android:maxLength="5" />
+    </LinearLayout>
+     <LinearLayout
+        android:id="@+id/LayExpireDate"
+        style="@style/FillWrap"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/AIGI_Txt_ExpireDate"
+            style="@style/TextViewLable"
+            android:text="@string/AIGI_ExpireDate" />
+
+        <EditText
+            android:id="@+id/AIGI_ExpireDate"
+            style="@style/Editext_FWLeftGravity"
+            android:hint="@string/AIGI_ExpireDate"
+            android:maxLength="5" />
+    </LinearLayout>
+    
+</LinearLayout>
